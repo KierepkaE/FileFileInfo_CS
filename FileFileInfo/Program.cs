@@ -17,6 +17,15 @@ namespace FileFileInfo
             }
 
             var content = File.ReadAllText(path);
+
+            var fileInfo = new FileInfo(path);
+            fileInfo.CopyTo(@"f:\new\myFile.jpg");
+            fileInfo.Delete();
+            if (fileInfo.Exists)
+            {
+                Console.WriteLine("File Exists.");
+            }
+           
         }
     }
 }
