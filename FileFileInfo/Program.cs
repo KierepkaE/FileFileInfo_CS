@@ -36,7 +36,22 @@ namespace FileFileInfo
             foreach (var file in files)
                 Console.WriteLine(file);
 
-           
+
+            var directories = Directory.GetDirectories(@"c:\projects\CSharp", ".", SearchOption.AllDirectories);
+
+            foreach (var directory in directories)
+                Console.WriteLine(directory);
+
+            Console.WriteLine(Directory.Exists(@"c:\example"));
+
+            // DirectoryInfo
+
+            var directoryInfo = new DirectoryInfo(@"c:\new");
+            directoryInfo.GetFiles();
+            directoryInfo.GetDirectories();
+
+       
+
         }
     }
 }
