@@ -18,6 +18,8 @@ namespace FileFileInfo
 
             var content = File.ReadAllText(path);
 
+            // FileInfo
+
             var fileInfo = new FileInfo(path);
             fileInfo.CopyTo(@"f:\new\myFile.jpg");
             fileInfo.Delete();
@@ -25,6 +27,15 @@ namespace FileFileInfo
             {
                 Console.WriteLine("File Exists.");
             }
+
+            // Directory
+
+            Directory.CreateDirectory(@"c:\all");
+            var files =  Directory.GetFiles(@"c:\projects\CSharp", ".", SearchOption.AllDirectories);
+
+            foreach (var file in files)
+                Console.WriteLine(file);
+
            
         }
     }
